@@ -4,7 +4,6 @@ class CreateApartments < ActiveRecord::Migration[5.0]
       t.string :name
       t.text :body
       t.text :summary
-      t.integer :apartment_type
 
       t.timestamps
     end

@@ -1,0 +1,20 @@
+- provide :title, controller_name
+
+%table
+  %thead
+    %tr
+      - columns.each do |col|
+        %th= col.to_s.humanize
+      %th
+  %tbody
+    - if object.any?
+      - object.each do |row|
+        %tr
+          - columns.each do |col|
+            %td= row.send col
+          %td.action_columns
+            = yield row
+    - else
+      %tr.no_results
+        %td{colspan: columns.count + 1}
+          = "No #{controller_name} found."

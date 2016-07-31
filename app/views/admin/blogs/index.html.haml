@@ -1,0 +1,7 @@
+= content_for :page_actions do
+  = link_to 'Compose Blog', new_admin_blog_path
+
+= render 'index', name: 'blogs', object: @blogs, columns: [:name] do |blog|
+  = link_to 'View', blog
+  = link_to 'Edit', [:edit, :admin, blog]
+  = link_to 'Delete', [:admin, blog], method: :delete, data: {confirm: 'This cannot be undone, are you sure you want to delete this?'}

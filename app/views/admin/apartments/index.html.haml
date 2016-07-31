@@ -1,0 +1,7 @@
+= content_for :page_actions do
+  = link_to 'New Apartment', new_admin_apartment_path
+
+= render 'index', name: 'apartments', object: @apartments, columns: [:name] do |apartment|
+  / # = link_to 'View', apartment
+  = link_to 'Edit', [:edit, :admin, apartment]
+  = link_to 'Delete', [:admin, apartment], method: :delete, data: {confirm: 'This cannot be undone, are you sure you want to delete this?'}

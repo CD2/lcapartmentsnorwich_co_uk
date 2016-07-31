@@ -1,0 +1,233 @@
+input[type=text], input[type=email], input[type=password]
+  height: 16px
+  border: 1px solid #bbb
+  padding: 24px 12px
+  color: #181817
+  width: 100%
+  font-size: 0.875rem
+  float: left
+  margin-bottom: 10px
+  box-sizing: border-box
+
+textarea
+  width: 100%
+  height: 200px
+  resize: none
+  padding: 0 12px
+  border: 1px solid #bbb
+  background: white
+  font-size: 0.875rem
+  line-height: 1.625rem
+  color: #181817
+  margin-bottom: 10px
+  box-sizing: border-box
+
+[type=submit]
+  background-color: $primary_color
+  border: none
+  display: inline-block
+  height: 55px
+  line-height: 55px
+  color: #fff
+  text-transform: uppercase
+  padding: 0 40px 0
+
+
+
+#admin_page_wrapper
+  +flexbox
+  min-height: 100vh
+  min-width: 1024px
+  background: #efefef
+
+#admin_sidebar
+  +flex(0 0 240px)
+  background-color: #A2A2A2
+  position: relative
+  a
+    display: block
+    width: 100%
+    color: white
+    font-weight: 600
+    text-align: center
+    line-height: 60px
+    text-decoration: none
+    text-transform: uppercase
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25)
+    transition: background-color 0.1s
+    &:first-child
+      border-top: 1px solid rgba(255, 255, 255, 0.26)
+    &:not(.admin_logo_link):hover
+      background-color: $secondary_color
+    &.admin_logo_link
+      padding: 18px 30px 0
+      box-sizing: border-box
+      height: 120px
+  .bottom_link
+    position: absolute
+    bottom: 0
+    width: 100%
+
+    a:hover
+      background: $delete_red
+
+#admin_page
+  +flex(1)
+  padding-bottom: 50px
+  #admin_page_inner
+    margin: 20px 50px
+
+  table
+    width: 100%
+    margin-bottom: 20px
+    background-color: white
+    border-collapse: collapse
+    &.order_items
+      margin-bottom: 0
+    thead tr
+      background-color: #999
+      color: white
+    tr:nth-child(even)
+      background-color: #e6e6e6
+    tbody tr:hover
+      background-color: #ddd
+    th, td
+      padding: 10px
+      text-align: left
+
+    td.action_links
+      width: 1px
+      white-space: nowrap
+    &.order_totals_table
+      max-width: 300px
+      margin-left: auto
+      tr
+        background-color: white
+      td:first-child
+        text-align: right
+      td:last-child
+        padding-left: 30px
+      .order_total_row
+        font-size: 1.125rem
+    .action_columns
+      width: 1%
+      white-space: nowrap
+      a
+        display: inline-block
+        margin: 0 10px 0 0
+        &.table_primary_action
+          background-color: $primary_color
+          color: white
+          padding: 8px
+          border-radius: 3px
+
+  fieldset
+    padding: 20px
+    margin-bottom: 20px
+    border: 1px solid rgba(0,0,0,0.15)
+    background-color: white
+    border-radius: 3px
+
+  legend
+    color: rgba(0,0,0,0.6)
+    font-size: 1.125rem
+    padding: 0 10px
+    background-color: white
+    border: 1px solid rgba(0,0,0,0.15)
+    border-radius: 3px
+
+  input[type="submit"]
+    width: 300px
+    height: 60px
+    margin-top: 10px
+
+#admin_title_bar
+  height: 80px
+  background: #312E29
+  padding: 0 30px
+  box-sizing: border-box
+  color: white
+  line-height: 80px
+  h1
+    font-weight: 100
+    text-transform: uppercase
+    margin: 0
+    color: white
+
+#admin_nav_bar
+  background-color: #fff
+  height: 40px
+  line-height: 40px
+  padding: 20px 50px
+  a
+    text-decoration: none
+    margin-left: 15px
+    background: $primary_color
+    color: white
+    padding: 10px 20px
+  .right_buttons
+    float: right
+
+.alert
+  padding: 20px
+  background: #ddd
+  margin-bottom: 10px
+  &.alert-error
+    color: white
+    background-color: $primary_color
+
+#error_explanation ul
+  padding: 20px 40px
+  background: #ddd
+  margin-top: -10px
+
+.admin_page_panel
+  margin-bottom: 20px
+
+.action_button
+  display: inline-block
+  padding: 15px 20px
+  background-color: $primary_color
+  color: white
+
+
+#admin_content
+  margin: 0 auto
+#admin_form_wrapper
+  +flexbox
+  #right_form_wrapper
+    +flex(1)
+    margin: 0 0 0 10px
+  #left_form_wrapper
+    +flex(2)
+    margin: 0 10px 0 0
+
+
+#admin_page .postage_form
+  select
+    width: inherit
+    display: inline-block
+    vertical-align: top
+    margin-bottom: 0
+  label
+    display: block
+  input[type=text]
+    max-width: 300px
+  .actions
+    display: inline-block
+    margin-bottom: 0
+    input[type=submit]
+      width: inherit
+      height: inherit
+      padding: 0 25px
+      line-height: 2rem
+      margin-top: 0
+
+h4
+  margin-bottom: 0
+p
+  margin-top: 0
+
+.preview
+  img
+    max-width: 150px

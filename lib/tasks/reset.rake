@@ -10,6 +10,6 @@ task production_init: :environment do
 
   Rake::Task["db:migrate"].invoke
   Rake::Task["gen_pages"].invoke
-  #Rake::Task["gen_users"].invoke
+  Rake::Task["gen_users"].invoke
 
 end

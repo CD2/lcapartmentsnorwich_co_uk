@@ -7,11 +7,12 @@ task gen_pages: :environment do
            <p>We have a number of different luxury serviced apartments which vary in terms of size and location depending on your requirements. All our properties are equipped as you\'d expect in the modern world for your convenience, even with the inclusion of complimentary wifi to help you stay connected for work or researching the local attractions</p>
            <p>The ever expanding shopping centre is with easy walking distance and includes House of Fraser, Marks and Spencer, John Lewis amongst others with the Castle Mall and Chapelfield shopping centres too, giving you plenty to do on your stay in Norwich.</p>
            <p>So whether you are taking a city break, longer term corporate contract or just a relaxing Norfolk holiday, our luxury serviced accommodation offers a superb, convenient and economical solution for your stay.</p>',
-    in_menu: true,
+    in_menu: false,
     home: true,
+    protected: true,
     banner: File.open(File.join(Rails.root, "seed_data/banners/home.jpg"))
   ).create_meta_data!(
-    url_alias: '',
+    url_alias: 'home',
     description: 'If you’re visiting for business or pleasure, our stylish serviced apartments in and around the medieval city of Norwich make the perfect place to stay.',
     title: 'Serviced Apartments Norwich | Luxury City Apartments'
   )
@@ -83,22 +84,11 @@ task gen_pages: :environment do
   )
 
   Page.create!(
-      name: 'Blog',
-      body: '<h1>Our Blog</h1>',
-      in_menu: true,
-      blog: true,
-      banner: File.open(File.join(Rails.root, "seed_data/banners/blog.jpg"))
-  ).create_meta_data!(
-      url_alias: 'blog',
-      description: 'Read our latest blog all about our serviced apartments in Norwich.',
-      title: 'Our Blog | Luxury City Apartments Norwich'
-  )
-
-  Page.create!(
       name: 'Contact Us',
       body: '<h1>Contact Us</h1>',
-      in_menu: true,
+      in_menu: false,
       contact: true,
+      protected: true,
       banner: File.open(File.join(Rails.root, "seed_data/banners/contact-us.jpg"))
   ).create_meta_data!(
       url_alias: 'contact-us',

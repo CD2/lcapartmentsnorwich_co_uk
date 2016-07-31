@@ -9,8 +9,9 @@ class CreatePages < ActiveRecord::Migration[5.0]
       t.boolean :in_menu, default: false
 
       t.boolean :home, default: false
-      t.boolean :blog, default: false
       t.boolean :contact, default: false
+
+      t.boolean :protected, default: false
 
       t.timestamps
     end

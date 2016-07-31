@@ -1,0 +1,46 @@
+= form_for [:admin, @page] do |f|
+  = render 'errors', object: f.object
+  
+  = field_set_tag 'Page Info' do
+    = f.fields_for :meta_data do |f|
+      .field
+        = f.label :title
+        = f.text_field :title
+      .field
+        = f.label :url_alias
+        = f.text_field :url_alias
+      .field
+        = f.label :description, 'Meta Description'
+        = f.text_area :description
+
+
+
+  = field_set_tag 'Page Details' do
+
+    .field
+      = f.label :name
+      = f.text_field :name
+    .field
+      = f.label :body
+      = f.cktext_area :body
+    = field_set_tag 'My Image' do
+      - if @page.banner
+        .preview= image_tag @page.banner
+      .field
+        = f.file_field :banner
+    - unless @page.protected?
+      .field
+        = f.label :in_menu, 'In Menu?'
+        = f.check_box :in_menu
+
+  = field_set_tag 'Apartments' do
+    Which apartments should display?
+    - Apartment.find_each do |apartment|
+      .field
+        = label_tag "apartments[#{apartment.id}]", apartment.name
+        = check_box_tag 'apartments[]', apartment.id, @page.apartments.include?(apartment), id: "apartments_#{apartment.id}"
+
+
+  .actions
+    = f.submit 'Save'
+    = f.submit 'Cancel', class: 'cancel_button'

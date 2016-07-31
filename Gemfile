@@ -6,16 +6,17 @@ gem 'puma', '~> 3.0'
 gem 'sass-rails', '~> 5.0'
 gem 'haml-rails'
 gem 'ckeditor'
-gem "friendly_id"
+gem 'friendly_id'
 gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
 gem 'carrierwave'
-gem "mini_magick"
+gem 'mini_magick'
 gem 'turbolinks', '~> 5.x'
 gem 'rails_12factor'
 gem 'bcrypt', '~> 3.1.7'
 gem 'jquery-ui-rails'
 gem 'figaro'
+gem 'devise'
 
 group :production do
   gem 'rails_12factor'
@@ -28,7 +29,9 @@ group :development, :test do
 end
 
 group :development do
-  gem 'web-console'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+
   gem 'listen', '~> 3.0.5'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'

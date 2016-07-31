@@ -1,0 +1,42 @@
+!!!
+%html
+  %head
+    %title= page_title(yield(:title))
+    %link{:href => "/fav.png?v=2", :rel => "shortcut icon", :type => "image/png"}/
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+
+    %meta{:content => "width=device-width, maximum-scale=1.0, minimum-scale=1.0, initial-scale=1", :name => "viewport"}/
+  :javascript
+    (function(d) {
+      var config = {
+        kitId: 'mcw8zdt',
+        scriptTimeout: 3000,
+        async: true
+      },
+      h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+    })(document);
+  %body.admin_page
+
+    #admin_page_wrapper
+      #admin_sidebar
+        = link_to image_tag('square_logo.png'), root_path, class: 'admin_logo_link'
+        = render 'side_menu'
+        .bottom_link
+          = link_to 'Logout', destroy_user_session_path, method: :delete
+      #admin_page
+        #admin_title_bar
+          %h1= yield :title
+        #admin_nav_bar
+          .right_buttons
+            = yield :page_actions
+        #admin_page_inner
+
+          - flash.each do |k, v|
+            %div{class: "alert alert-#{k}"}
+              = v
+              
+          = yield
+  
+
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'

@@ -1,0 +1,8 @@
+= content_for :page_actions do
+  = link_to 'New User', new_admin_user_path
+
+
+= render 'index', name: 'users', object: @users, columns: [:email] do |user|
+  = link_to 'Edit', [:edit, :admin, user]
+  - unless user == current_user
+    = link_to 'Delete', [:admin, user], method: :delete, data: {confirm: 'This cannot be undone, are you sure you want to delete this?'}

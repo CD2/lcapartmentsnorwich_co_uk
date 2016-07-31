@@ -1,0 +1,16 @@
+= form_for [:admin, @apartment] do |f|
+  = render 'errors', object: f.object
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :body
+    = f.cktext_area :body
+  .field
+    = f.label :summary  
+    = f.text_area :summary  
+
+  .actions
+    = f.submit 'Save'
+    = f.submit 'Cancel', class: 'cancel_button'

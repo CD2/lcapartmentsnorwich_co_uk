@@ -8,8 +8,4 @@ module ApplicationHelper
     end
   end
 
-  def main_menu_items
-    Page.menu_pages.map {|p| [p.name, p.url_alias]}
-  end
-
 end
