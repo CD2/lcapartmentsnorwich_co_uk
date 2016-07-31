@@ -1,0 +1,10 @@
+%header#header
+  #header_inner
+    #logo
+      = image_tag 'logo.png'
+    #contact_header_details
+      %span Tel. 07771 881456
+      %span Email. bookings@lcaapartments.co.uk
+    #main_menu
+      - main_menu_items.each do |name, path|
+        = link_to name, path

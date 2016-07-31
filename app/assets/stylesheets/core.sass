@@ -1,0 +1,44 @@
+html, body, input, select, textarea
+  outline: none
+
+body
+  font-family: 'Gill Sans', "museo-sans", sans-serif
+  -webkit-font-smoothing: antialiased
+  background-color: #efefef
+
+h1, h2, h3
+  font-weight: 100
+
+h1, h2, h3, h4, h5, h6, p, li, span
+  color: rgba(0, 0, 0, 0.7)
+  opacity: 0
+  .wf-active &
+    opacity: 1
+    transition: 0.2s
+
+p
+  font-size: 1rem
+  line-height: 1.875rem
+
+a
+  text-decoration: none
+  color: $blue
+  opacity: 0
+  .wf-active &
+    opacity: 1
+    transition: 0.2s
+  &:hover
+    text-decoration: underline
+
+img
+  max-width: 100%
+
+#content_wrapper
+  padding: 24px
+  max-width: 1200px
+  margin: 0 auto
+
+.body_text
+  max-width: 600px
+  > p:first-of-type
+    font-size: 1.125rem

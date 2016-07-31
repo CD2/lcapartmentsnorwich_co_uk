@@ -1,0 +1,49 @@
+#banner
+  background-size: cover
+  background-position: 50%
+  height: 300px
+  background-color: $blue
+  padding: 24px
+  box-sizing: border-box
+  text-align: center
+  h2, p
+    color: white
+  &.large_banner
+    height: 600px
+
+#banner_text
+  padding-top: 200px
+
+  h2
+    text-transform: uppercase
+    font-size: 2rem
+    margin: 0
+
+  p
+    font-size: 1.375rem
+    font-weight: 500
+
+#apartment_previews
+  max-width: 1200px
+  margin: 0 auto
+
+.apartment_preview
+  +flexbox
+
+.apartment_preview_text
+  +flex(1)
+  padding: 40px
+  box-sizing: border-box
+  h1, h2, h3, p
+    color: white
+  p
+    font-size: 0.875rem
+  &.odd
+    background-color: $blue
+  &.even
+    background-color: $light_blue
+
+.apartment_preview_image
+  +flex(2)
+  background-size: cover
+  background-position: 50%

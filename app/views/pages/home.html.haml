@@ -1,0 +1,26 @@
+#banner.large_banner{style: "background-image: url(#{@page.banner})"}
+  #banner_text
+    %h2 Stylish, Serviced Apartments in the Heart of the Historic City
+    %p
+      If you are visiting Norwich for business or pleasure,
+      %br
+      Our
+      %b Stylish Apartments
+      are a great way to stay and enjoy
+      %b luxury Accomodation.
+
+#content_wrapper
+  #content
+    .split_page
+      .main_column.body_text
+        = raw @page.body
+      .side_column
+        Soemthing
+
+    #service_summaries
+      .service_summary
+        = image_tag 'accomodation.jpg'
+        = image_tag 'corporate.jpg'
+        = image_tag 'leisure.jpg'
+
+

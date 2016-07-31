@@ -1,0 +1,24 @@
+#banner{style: "background-image: url(#{@page.banner})"}
+#content_wrapper
+  #content
+    .split_page
+      .main_column.body_text
+        = raw @page.body
+      .side_column
+
+
+
+#apartment_previews
+  - Apartment.all.each_with_index do |apartment, i|
+    .apartment_preview
+
+      - if i.odd?
+        .apartment_preview_text.odd
+          = raw apartment.summary
+        .apartment_preview_image{style: "background-image: url(#{apartment.cover_image})"}
+
+      - else
+
+        .apartment_preview_image{style: "background-image: url(#{apartment.cover_image})"}
+        .apartment_preview_text.even
+          = raw apartment.summary
