@@ -22,11 +22,32 @@ task gen_pages: :environment do
               <li>Travel cot</li>
               <li>High chair</li>
               <li>Additional temporary beds</li>
-            </ul>'
+            </ul>',
+      maps_embed_code: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2421.570672251515!2d1.2956397658116412!3d52.63160212983531!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d9e3dd58ae5ee7%3A0x35e1fdfbcbff022f!2s9-12+Samson+And+Hercules!5e0!3m2!1sen!2suk!4v1470058937689" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>'
   ).meta_data.update(
       url_alias: 'samson-hercules-apartment',
       description: 'Situated in the historic Tombland area of Norwich, The Samson and Hercules serviced apartments is the perfect place to stay to enjoy the history of the city.',
       title: 'Samson and Hercules Serviced Apartments Norwich | Norfolk'
+  )
+
+  Apartment.create!(
+      name: 'Greyfriars Apartments, Norwich',
+      body: '<h1>Greyfriars Apartments, Norwich, Norfolk</h1><p>Greyfriars is a lovely two bedroom first floor apartment right in the center of Norwich, next door to Norwich castle and just a few steps away from the main shops, tourist attractions and business district. This is a large, spacious two bedroom apartment, two king-size bedrooms, one en-suite shower room and one family bathroom. The living area is open plan and will comfortably house four guests.</p>',
+      summary: '<h2>Greyfriars Apartments, Norwich</h2><p>Greyfriars is a lovely two bedroom first floor apartment right in the center of Norwich, next door to Norwich castle and just a few steps away from the main shops, tourist attractions and business district. This is a large, spacious two bedroom apartment, two king-size bedrooms, one en-suite shower room and one family bathroom. The living area is open plan and will comfortably house four guests.</p>',
+      information: '<h3>Prices</h3>
+<ul>
+<li>Starting from £110 per night plus vat.</li></ul>
+
+<h3>Chargeable extras (£10 per item per night)</h3>
+<ul>
+<li>Travel cot</li>
+<li>High chair</li>
+<li>Additional temporary beds</li></ul>',
+      maps_embed_code: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7678.6362322214145!2d1.2937377545875264!3d52.63202734803729!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d9e3e8f49de429%3A0xa8b4727c4d649e29!2s69G+Luxury+Apartment!5e0!3m2!1sen!2suk!4v1470059011279'
+  ).meta_data.update(
+      url_alias: 'greyfriars-apartments',
+      description: '',
+      title: 'Greyfriars Apartments Norwich | Norfolk'
   )
 
   Apartment.create!(
@@ -44,7 +65,8 @@ task gen_pages: :environment do
                 <li>Travel cot</li>
                 <li>High chair</li>
                 <li>Additional temporary beds</li>
-              </ul>'
+              </ul>',
+      maps_embed_code: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4843.638999121843!2d1.288007999747268!3d52.62710588135497!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d9e3e2e4f7a029%3A0xccba7d3f717db011!2snorwichapartment.com+self+catering+serviced+apartments+Norfolk!5e0!3m2!1sen!2suk!4v1470059273938'
   ).meta_data.update(
       url_alias: 'quayside-apartment',
       description: 'We have a variety of Norwich apartments to choose from. Our Quayside apartments are located right on the river Wensum along a lovely cobbled lane.',
@@ -54,7 +76,8 @@ task gen_pages: :environment do
   Apartment.create!(
       name: 'The Dragon Hall Apartment',
       body: '<h1>The Dragon Hall Serviced Apartment</h1>',
-      summary: '<h2>The Dragon Hall Serviced Apartment</h2>'
+      summary: '<h2>The Dragon Hall Serviced Apartment</h2>',
+      maps_embed_code: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d38722.62126272344!2d1.2702803468799804!3d52.65701837789595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d9e3ef27f55ba1%3A0x98ea2443f10475a0!2sDragon+Hall!5e0!3m2!1sen!2suk!4v1470059343086'
   ).meta_data.update(
       url_alias: 'the-dragon-hall-apartment',
       description: 'The Dragon Hall apartment is a great place to stay for either leisure or corporate. We can offer long term letting or short city breaks on the Norwich apartment.',
@@ -91,7 +114,7 @@ task gen_pages: :environment do
       body: '<h1>Serviced Apartments Norwich</h1><p>Our luxury serviced apartments, cottages and houses are a great way to stay and enjoy luxury accommodation with space and privacy that perhaps you would not necessarily experience when staying in a hotel at such an affordable price.Whether visiting for business or pleasure, our stylish serviced apartments in and around the medieval City of Norwich make a great centre point base for your visit to the City or Norfolk countryside.</p>',
       in_menu: true,
       banner: File.open(File.join(Rails.root, "seed_data/banners/accommodation.jpg")),
-      apartment_ids: [1, 2, 3]
+      apartment_ids: [1, 2, 3, 4]
   ).meta_data.update(
       url_alias: 'accommodation',
       description: 'We provide luxury serviced Norwich apartments to rent in and around the city centre. Our serviced apartments make the perfect place to stay in this wonderful city.',
