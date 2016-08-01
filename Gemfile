@@ -16,7 +16,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'jquery-ui-rails'
 gem 'figaro'
 gem 'devise'
-gem 'unslider-rails', github: 'nunopolonia/unslider-rails'
+gem 'jquery-unslider-rails'
 gem 'font-awesome-rails'
 
 group :production do
