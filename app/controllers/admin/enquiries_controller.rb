@@ -17,11 +17,8 @@ class Admin::EnquiriesController < AdminController
   private
 
     def set_enquiry
-      @enquiry = Enquiry.find_enquiry params[:id]
+      @enquiry = Enquiry.find params[:id]
     end
 
-    def enquiry_params
-      params.require(:enquiry).permit(:name, :email, :body)
-    end
 
 end
