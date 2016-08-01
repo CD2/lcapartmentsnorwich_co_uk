@@ -23,7 +23,7 @@ task gen_pages: :environment do
               <li>High chair</li>
               <li>Additional temporary beds</li>
             </ul>',
-      maps_embed_code: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2421.570672251515!2d1.2956397658116412!3d52.63160212983531!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d9e3dd58ae5ee7%3A0x35e1fdfbcbff022f!2s9-12+Samson+And+Hercules!5e0!3m2!1sen!2suk!4v1470058937689" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>'
+      maps_embed_code: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2421.570672251515!2d1.2956397658116412!3d52.63160212983531!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d9e3dd58ae5ee7%3A0x35e1fdfbcbff022f!2s9-12+Samson+And+Hercules!5e0!3m2!1sen!2suk!4v1470058937689'
   ).meta_data.update(
       url_alias: 'samson-hercules-apartment',
       description: 'Situated in the historic Tombland area of Norwich, The Samson and Hercules serviced apartments is the perfect place to stay to enjoy the history of the city.',
