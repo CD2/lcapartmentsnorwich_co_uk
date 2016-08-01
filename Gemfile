@@ -17,6 +17,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'jquery-ui-rails'
 gem 'figaro'
 gem 'devise'
+gem 'font-awesome-rails'
 
 group :production do
   gem 'rails_12factor'
