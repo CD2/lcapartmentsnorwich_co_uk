@@ -9,7 +9,29 @@
     = f.cktext_area :body
   .field
     = f.label :summary  
-    = f.text_area :summary  
+    = f.cktext_area :summary  
+  .field
+    = f.label :information
+    = f.cktext_area :information
+  .field
+    = f.label :maps_embed_code, 'Google maps embed code'
+    = f.text_field :maps_embed_code
+
+  = field_set_tag 'Images' do
+    = f.fields_for :apartment_images do |image_f|
+      - if image_f.object.image.url.present?
+        .preview.destroyable
+          = image_f.hidden_field :id
+          = image_f.check_box :_destroy, class: '_destroy'
+          = image_tag image_f.object.image
+          = image_f.label :_destroy, 'Remove Image'
+
+
+
+
+    = f.label :new_apartment_images
+    = f.file_field :new_apartment_images, multiple: true
+
 
   .actions
     = f.submit 'Save'

@@ -140,6 +140,7 @@ textarea
     width: 300px
     height: 60px
     margin-top: 10px
+    text-align: center
 
 #admin_title_bar
   height: 80px
@@ -231,3 +232,19 @@ p
 .preview
   img
     max-width: 150px
+
+.destroyable
+  margin-bottom: 20px
+  position: relative
+  bottom: 5px
+  &:hover
+    text-decoration: underline
+
+
+
+  input[type=checkbox]
+    display: none
+    &:checked~*
+      display: none
+
+

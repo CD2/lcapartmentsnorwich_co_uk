@@ -12,8 +12,7 @@ class Admin::ApartmentsController < AdminController
 
   def create
     @apartment = Apartment.new(apartment_params)
-    if @apartment.valid?
-      @apartment.save!
+    if @apartment.save!
       flash[:success] = "Apartment Created"
       redirect_to @apartment
     else
@@ -25,9 +24,10 @@ class Admin::ApartmentsController < AdminController
   end
 
   def update
+    byebug
     @apartment.assign_attributes(apartment_params)
-    if @apartment.valid?
-      @apartment.save!
+    if @apartment.save!
+      @apartment.process_images params[:apartment][:new_apartment_images]
       flash[:success] = "Apartment Updated"
       redirect_to admin_apartments_path
     else
@@ -45,7 +45,7 @@ class Admin::ApartmentsController < AdminController
   private
 
   def apartment_params
-    params.require(:apartment).permit(:name, :body)
+    params.require(:apartment).permit(:name, :body, :summary, :information, :maps_embed_code, :new_apartment_images, apartment_images_attributes: [:id, :image, :_destroy])
   end
 
   def set_apartment
