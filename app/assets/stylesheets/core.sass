@@ -39,6 +39,13 @@ img
   margin: 0 auto
 
 .body_text
-  max-width: 600px
   > p:first-of-type
     font-size: 1.125rem
+
+.split_page
+  +flexbox
+.main_column
+  +flex(1)
+.side_column
+  +flex(0 0 500px)
+  padding: 50px 0 50px 50px

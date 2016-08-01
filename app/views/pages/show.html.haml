@@ -9,12 +9,13 @@
 
 
 #apartment_previews
-  - Apartment.all.each_with_index do |apartment, i|
+  - @page.apartments.each_with_index do |apartment, i|
     .apartment_preview
 
       - if i.odd?
         .apartment_preview_text.odd
           = raw apartment.summary
+          = link_to 'More', apartment
         .apartment_preview_image{style: "background-image: url(#{apartment.cover_image})"}
 
       - else
@@ -22,3 +23,4 @@
         .apartment_preview_image{style: "background-image: url(#{apartment.cover_image})"}
         .apartment_preview_text.even
           = raw apartment.summary
+          = link_to 'More', apartment
