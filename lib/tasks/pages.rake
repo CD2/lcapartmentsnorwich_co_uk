@@ -11,7 +11,7 @@ task gen_pages: :environment do
     home: true,
     protected: true,
     banner: File.open(File.join(Rails.root, "seed_data/banners/home.jpg"))
-  ).create_meta_data!(
+  ).meta_data.update(
     url_alias: 'home',
     description: 'If you’re visiting for business or pleasure, our stylish serviced apartments in and around the medieval city of Norwich make the perfect place to stay.',
     title: 'Serviced Apartments Norwich | Luxury City Apartments'
@@ -22,7 +22,7 @@ task gen_pages: :environment do
       body: '<h1>Serviced Apartments Norwich</h1>',
       in_menu: true,
       banner: File.open(File.join(Rails.root, "seed_data/banners/accommodation.jpg"))
-  ).create_meta_data!(
+  ).meta_data.update(
       url_alias: 'accommodation',
       description: 'We provide luxury serviced Norwich apartments to rent in and around the city centre. Our serviced apartments make the perfect place to stay in this wonderful city.',
       title: 'Norwich Serviced Apartments | Luxury City Apartments'
@@ -33,7 +33,7 @@ task gen_pages: :environment do
       body: '<h1>Norwich Apartments for Corporate Travelers</h1>',
       in_menu: true,
       banner: File.open(File.join(Rails.root, "seed_data/banners/corporate.jpg"))
-  ).create_meta_data!(
+  ).meta_data.update(
       url_alias: 'corporate',
       description: 'We offer a variety of Norwich serviced apartments perfect for corporate purposes. Our apartments make the perfect stay to see this mediaeval city.',
       title: 'Norwich Serviced Apartments Corporate Travelers | Luxury City Apartments'
@@ -44,7 +44,7 @@ task gen_pages: :environment do
       body: '<h1>Holiday Apartments for Leisure in Norwich</h1>',
       in_menu: true,
       banner: File.open(File.join(Rails.root, "seed_data/banners/leisure.jpg"))
-  ).create_meta_data!(
+  ).meta_data.update(
       url_alias: 'leisure',
       description: 'Our holiday apartments in Norwich are perfect for a leisure stay. It’s a great way to see the mediaeval city, with cobble lanes and unique spots you’ll soon be amazed.',
       title: 'Holiday Apartments Norwich, Leisure | Luxury City Apartments '
@@ -55,7 +55,7 @@ task gen_pages: :environment do
       body: '<h1>Visit Norwich</h1>',
       in_menu: true,
       banner: File.open(File.join(Rails.root, "seed_data/banners/visit-norwich.jpg"))
-  ).create_meta_data!(
+  ).meta_data.update(
       url_alias: 'visit-norwich',
       description: 'There are a lot of places to see in Norwich, so why not visit Norwich and stay in one of our Norwich apartments providing a great way to see the City.',
       title: 'Visit Norwich | Places To See In Norwich| Luxury City Apartments '
@@ -66,7 +66,7 @@ task gen_pages: :environment do
       body: '<h1>About Us</h1>',
       in_menu: true,
       banner: File.open(File.join(Rails.root, "seed_data/banners/about-us.jpg"))
-  ).create_meta_data!(
+  ).meta_data.update(
       url_alias: 'about-us',
       description: 'Luxury City Apartments provides a range of serviced apartments in and around the city of Norwich, for either leisure or corporate traveler.',
       title: 'About Us | Luxury City Apartments'
@@ -77,7 +77,7 @@ task gen_pages: :environment do
       body: '<h1>Let your property in Norwich</h1>',
       in_menu: true,
       banner: File.open(File.join(Rails.root, "seed_data/banners/let-your-property.jpg"))
-  ).create_meta_data!(
+  ).meta_data.update(
       url_alias: 'let-your-property',
       description: 'Luxury City Apartments can help you let your property. If you are thinking about letting your property out in Norwich Luxury City Apartments would like to help you. ',
       title: 'Let your property | Luxury City Apartments'
@@ -90,7 +90,7 @@ task gen_pages: :environment do
       contact: true,
       protected: true,
       banner: File.open(File.join(Rails.root, "seed_data/banners/contact-us.jpg"))
-  ).create_meta_data!(
+  ).meta_data.update(
       url_alias: 'contact-us',
       description: 'Contact us today for any questions or bookings you have on any of our Norwich apartments.',
       title: 'Contact Us | Luxury City Apartments'
@@ -117,7 +117,7 @@ task gen_pages: :environment do
               <li>Additional temporary beds</li>
             </ul>',
       summary: '<h2>Samson and Hercules Apartments, Norwich</h2><p>The Samson & Hercules apartments are situated in the historic Tombland area of Norwich. This is the oldest part of Norwich, a labyrinth of cobbled streets well known for it\'s beautiful and unique selection of restaurants and wine bars, coffee shops, deli\'s and boutiques, there is a wide selection available which cater for all tastes.</p>'
-  ).create_meta_data!(
+  ).meta_data.update(
       url_alias: 'samson-hercules-apartment',
       description: 'Situated in the historic Tombland area of Norwich, The Samson and Hercules serviced apartments is the perfect place to stay to enjoy the history of the city.',
       title: 'Samson and Hercules Serviced Apartments Norwich | Norfolk'
@@ -138,7 +138,7 @@ task gen_pages: :environment do
                 <li>Additional temporary beds</li>
               </ul>',
       summary: '<h2>Quayside Apartments, Norwich</h2><p>Quayside apartments are a selection of two bedroom apartments located right on the river along a lovely cobbled lane. The building is an old conversion which means the apartments have lots of character, high ceilings, wooden floors throughout and large sash windows.</p>'
-  ).create_meta_data!(
+  ).meta_data.update(
       url_alias: 'quayside-apartment',
       description: 'We have a variety of Norwich apartments to choose from. Our Quayside apartments are located right on the river Wensum along a lovely cobbled lane.',
       title: 'Quayside Serviced Apartments Norwich | Norfolk'
@@ -147,7 +147,7 @@ task gen_pages: :environment do
   Apartment.create!(
       name: 'The Dragon Hall Apartment',
       body: '<h1>The Dragon Hall Serviced Apartment</h1>'
-  ).create_meta_data!(
+  ).meta_data.update(
       url_alias: 'the-dragon-hall-apartment',
       description: 'The Dragon Hall apartment is a great place to stay for either leisure or corporate. We can offer long term letting or short city breaks on the Norwich apartment.',
       title: 'The Dragon Hall Serviced Apartment Norwich | Norfolk'

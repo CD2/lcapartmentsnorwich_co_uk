@@ -1,4 +1,5 @@
 class Apartment < ApplicationRecord
+  include MetaDataConcern
 
   has_one :meta_data, as: :meta
   has_many :apartment_images

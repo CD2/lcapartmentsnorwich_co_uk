@@ -6,9 +6,10 @@
       .field
         = f.label :title
         = f.text_field :title
-      .field
-        = f.label :url_alias
-        = f.text_field :url_alias
+      - unless @page.protected?
+        .field
+          = f.label :url_alias
+          = f.text_field :url_alias
       .field
         = f.label :description, 'Meta Description'
         = f.text_area :description
@@ -23,7 +24,7 @@
     .field
       = f.label :body
       = f.cktext_area :body
-    = field_set_tag 'My Image' do
+    = field_set_tag 'Banner' do
       - if @page.banner
         .preview= image_tag @page.banner
       .field
@@ -37,8 +38,8 @@
     Which apartments should display?
     - Apartment.find_each do |apartment|
       .field
-        = label_tag "apartments[#{apartment.id}]", apartment.name
-        = check_box_tag 'apartments[]', apartment.id, @page.apartments.include?(apartment), id: "apartments_#{apartment.id}"
+        = label_tag "apartment_ids[#{apartment.id}]", apartment.name
+        = check_box_tag 'page[apartment_ids][]', apartment.id, @page.apartments.include?(apartment), id: "apartment_ids_#{apartment.id}"
 
 
   .actions
