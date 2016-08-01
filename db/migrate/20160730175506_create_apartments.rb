@@ -6,6 +6,9 @@ class CreateApartments < ActiveRecord::Migration[5.0]
       t.text :body
       t.text :summary
 
+      t.text :infomation
+      t.string :maps_embed_code
+
       t.timestamps
     end
   end
