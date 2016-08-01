@@ -1,0 +1,14 @@
+- provide :title, 'Enquiry'
+
+%h4 Name
+%p= @enquiry.name
+%h4 Email
+%p= @enquiry.email
+%h4 Body
+%p= simple_format @enquiry.body
+%h4 Phone
+%p= @enquiry.phone
+%h4 From
+%p= @enquiry.date_from
+%h4 To
+%p= @enquiry.date_to

@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require jquery-ui
 //= require_tree .
 //= require ckeditor/init
 
@@ -24,3 +25,7 @@ $(window).scroll(function() {
         $("html").removeClass("header_scrolled");
     }
 }); //missing );
+
+$(window).on('load page:load', function() {
+  $('.datepicker').datepicker()
+});

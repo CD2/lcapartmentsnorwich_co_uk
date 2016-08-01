@@ -48,7 +48,6 @@ ActiveRecord::Schema.define(version: 20160801005450) do
     t.text     "information"
     t.text     "body"
     t.text     "summary"
-    t.text     "infomation"
     t.string   "maps_embed_code"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
