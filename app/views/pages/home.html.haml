@@ -1,4 +1,4 @@
-= provide :edit, url_for([:edit, :admin, @page])
+= provide :edit, link_to('Edit', [:edit, :admin, @page])
 
 #banner.large_banner{style: "background-image: url(#{@page.banner})"}
   #banner_text
@@ -16,13 +16,12 @@
     .split_page
       .main_column.body_text
         = raw @page.body
-      .side_column
-        = image_tag 'front_feat.png'
+      .side_column.form
+        = form_for Enquiry.new do |f|
+          %h2 Get in touch
+          = render 'enquiries/fields', f: f
 
-    #service_summaries
-      .service_summary
-        = image_tag 'front_accom.png'
-        = image_tag 'front_corp.png'
-        = image_tag 'front_lesisure.png'
+    #apartment_teasers
+      = render partial: 'apartments/teaser', collection: Apartment.all, as: :apartment
 
 

@@ -13,9 +13,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery-ui
-/// = require turbolinks
+//= reasdquire turbolinks
 //= require_tree .
 //= require ckeditor/init
+//= require unslider 
 
 $(window).scroll(function() {
     var scroll = $(window).scrollTop();
@@ -26,6 +27,14 @@ $(window).scroll(function() {
     }
 }); //missing );
 
-$(window).on('load page:load', function() {
+$(window).on('load', function() {
   $('.datepicker').datepicker({dateFormat: "dd-mm-yy"})
+
+  $('.apartment_images_slideshow').unslider({
+    autoplay: true,
+    nav: true
+  })
+
 });
+
+

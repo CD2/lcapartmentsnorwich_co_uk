@@ -1,3 +1,5 @@
+= provide :edit, link_to('Edit', [:edit, :admin, @apartment])
+
 #banner{style: "background-image: url(#{@apartment.cover_image})"}
 #content_wrapper
   #content
@@ -7,8 +9,6 @@
         .summary_stats
           = raw @apartment.information
       .side_column
-        .google_maps_embed
-          %iframe{:allowfullscreen => "", :frameborder => "0", :height => "400", :src => "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d38702.785939379675!2d1.164788!3d52.679408!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xe7aa13dc58c5c5fe!2sSwan+Inn!5e0!3m2!1sen!2suk!4v1463873452306", :style => "border:0", :width => "100%"}
         .arrangement_form
           %h3 Arrangement Form
           = form_for @enquiry do |f|
@@ -35,6 +35,10 @@
               = f.hidden_field :apartment_id
             .actions
               = f.submit :send
-    .apartment_images
+        .google_maps_embed
+          %iframe{:allowfullscreen => "", :frameborder => "0", :height => "400", :src => "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d38702.785939379675!2d1.164788!3d52.679408!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xe7aa13dc58c5c5fe!2sSwan+Inn!5e0!3m2!1sen!2suk!4v1463873452306", :style => "border:0", :width => "100%"}
+.apartment_images
+  .apartment_images_slideshow
+    %ul
       - @apartment.apartment_images.each do |img|
-        = image_tag img.image.thumb
+        %li{style: "background-image: url(#{img.image})"}

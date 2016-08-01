@@ -11,14 +11,4 @@
         .arrangement_form
           %h3 Arrange a callback now
           = form_for @enquiry do |f|
-            .field
-              = f.label :name
-              = f.text_field :name
-            .field
-              = f.label :email
-              = f.email_field :email
-            .field
-              = f.label :body
-              = f.text_area :body
-            .actions
-              = f.submit :send
+            = render 'fields', f: f
