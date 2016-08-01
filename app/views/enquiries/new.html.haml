@@ -1,0 +1,22 @@
+#banner{style: "background-image: url(#{@page.banner})"}
+#content_wrapper
+  #content
+    .split_page
+      .main_column.body_text
+        = raw @page.body
+
+      .side_column
+        .arrangement_form
+          %h3 Arrange a callback now
+          = form_for @enquiry do |f|
+            .field
+              = f.label :name
+              = f.text_field :name
+            .field
+              = f.label :email
+              = f.email_field :email
+            .field
+              = f.label :body
+              = f.text_area :body
+            .actions
+              = f.submit :send

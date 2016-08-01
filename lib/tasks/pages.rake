@@ -155,7 +155,7 @@ task gen_pages: :environment do
 
   Page.create!(
       name: 'Contact Us',
-      body: '<h1>Contact Us</h1>',
+      body: '<h1>Contact Us</h1><p>If you are visiting the medieval City of Norwich for business or pleasure our stylish apartments are a great way to stay and enjoy luxury accommodation as well as the space and privacy that perhaps you would not necessarily have when staying in a hotel.</p><p>To book any of our properties or to discuss your requirements in further detail please contact: Emily Bidwell on 07771 881 456 or use the contact form provided.</p>',
       in_menu: false,
       contact: true,
       protected: true,

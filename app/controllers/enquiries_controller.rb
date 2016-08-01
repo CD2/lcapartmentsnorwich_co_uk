@@ -1,7 +1,7 @@
 class EnquiriesController < ApplicationController
 
     def new
-      @page = Page.find_by(machine_name: 'contact_us')
+      @page = Page.find_by(contact: true)
       @enquiry = Enquiry.new
     end
 
@@ -16,7 +16,7 @@ class EnquiriesController < ApplicationController
     end
 
     def thanks
-      @page = Page.find_by(machine_name: 'contact_us')
+      @page = Page.find_by(contact: true)
     end
 
     private
