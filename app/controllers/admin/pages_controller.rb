@@ -45,7 +45,6 @@ class Admin::PagesController < AdminController
   private
 
   def page_params
-    byebug
     params.require(:page).permit(:name, :body, :banner, apartment_ids: [], meta_data_attributes: [:id, :title, :description, :url_alias])
   end
 

@@ -24,7 +24,6 @@ class Admin::ApartmentsController < AdminController
   end
 
   def update
-    byebug
     @apartment.assign_attributes(apartment_params)
     if @apartment.save!
       @apartment.process_images params[:apartment][:new_apartment_images]
