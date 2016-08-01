@@ -16,7 +16,7 @@
 //= reasdquire turbolinks
 //= require_tree .
 //= require ckeditor/init
-//= require unslider 
+//= require jquery-unslider
 
 $(window).scroll(function() {
     var scroll = $(window).scrollTop();
@@ -32,7 +32,8 @@ $(window).on('load', function() {
 
   $('.apartment_images_slideshow').unslider({
     autoplay: true,
-    nav: true
+    arrows: false,
+    speed: 500
   })
 
 });
