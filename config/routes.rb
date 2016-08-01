@@ -19,7 +19,13 @@ Rails.application.routes.draw do
 
 
   root 'pages#home'
+
+  get '/contact-us', to: 'enquiries#new'
+
   resources :blogs
+  resources :enquiries, path: 'contact-us', only: [:new, :create] do
+    collection {get :thanks}
+  end
   resources :apartment_enquiries
   resources :apartments, only: :show
   resources :pages, path: '', only: :show
