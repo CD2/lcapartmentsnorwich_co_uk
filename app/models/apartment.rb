@@ -10,7 +10,7 @@ class Apartment < ApplicationRecord
   
   has_many :apartment_enquiries
 
-  def process_images images
+  def process_images images=[]
     images.each do |image|
       self.apartment_images.create!(image: image)
     end
