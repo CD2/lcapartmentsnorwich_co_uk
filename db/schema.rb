@@ -19,13 +19,12 @@ ActiveRecord::Schema.define(version: 20160801005450) do
     t.string   "name"
     t.string   "email"
     t.string   "phone"
-    t.datetime "data_to"
-    t.datetime "data_from"
+    t.datetime "date_to"
+    t.datetime "date_from"
     t.text     "body"
     t.integer  "apartment_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
-    t.index ["apartment_id"], name: "index_apartment_enquiries_on_apartment_id", using: :btree
   end
 
   create_table "apartment_images", force: :cascade do |t|
@@ -46,6 +45,7 @@ ActiveRecord::Schema.define(version: 20160801005450) do
 
   create_table "apartments", force: :cascade do |t|
     t.string   "name"
+    t.text     "information"
     t.text     "body"
     t.text     "summary"
     t.text     "infomation"
