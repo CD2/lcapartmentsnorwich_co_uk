@@ -17,6 +17,8 @@ gem 'jquery-ui-rails'
 gem 'figaro'
 gem 'devise'
 gem 'unslider-rails', github: 'nunopolonia/unslider-rails'
+gem 'font-awesome-rails'
+
 group :production do
   gem 'rails_12factor'
   gem 'fog'
