@@ -55,3 +55,44 @@ img
     padding: 20px
     box-sizing: border-box
     width: 33%
+
+#on_site_admin_bar
+  background-color: $blue
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25)
+  font-size: 0
+  a
+    display: inline-block
+    padding: 0 20px
+    color: white
+    font-weight: 600
+    font-size: 0.75rem
+    text-align: center
+    line-height: 40px
+    text-decoration: none
+    text-transform: uppercase
+    border-right: 1px solid rgba(255, 255, 255, 0.25)
+    transition: background-color 0.1s
+    &:first-of-type
+      border-left: 1px solid rgba(255, 255, 255, 0.26)
+    &:hover
+      background-color: #00005b
+
+      + a
+        border-left: 1px solid rgba(255, 255, 255, 0.25)
+  .edit_link
+    display: inline-block
+    a
+      margin-right: 20px
+      border-left: 1px solid rgba(255, 255, 255, 0.25)
+
+  + #header_inner
+    margin-top: 40px
+
+  .right_link
+    float: right
+    a:hover
+      background: $delete_red

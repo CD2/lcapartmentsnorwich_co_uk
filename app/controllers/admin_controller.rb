@@ -1,8 +1,6 @@
 class AdminController < ApplicationController
 
-  unless Rails.env.development?
-    before_action :authenticate_user!
-  end
+  before_action :authenticate_user!
   
   layout 'admin_application'
 
