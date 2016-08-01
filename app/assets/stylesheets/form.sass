@@ -1,0 +1,44 @@
+.input_columns
+  +flexbox
+  +flex-wrap(wrap)
+  +justify-content(space-between)
+  .input_column
+    +flex-shrink(0)
+    width: 49%
+    margin-bottom: 30px
+    &.message
+      width: 100%
+
+input[type=text], input[type=email]
+  height: 16px
+  border: none
+  border-bottom: 1px solid #bbb
+  padding: 12px 0
+  color: #8f8d87
+  width: 100%
+  float: left
+  margin-bottom: 10px
+
+textarea
+  width: 100%
+  height: 100px
+  resize: none
+  border: none
+  border: 1px solid #bbb
+  background: white
+  line-height: 40px
+  color: #8f8d87
+
+[type=submit]
+  background-color: $blue
+  border: none
+  display: inline-block
+  height: 55px
+  line-height: 55px
+  color: #fff
+  text-transform: uppercase
+  padding: 0 40px 0
+  text-align: right
+
+form
+  padding-top: 40px

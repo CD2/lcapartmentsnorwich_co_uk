@@ -20,6 +20,7 @@ Rails.application.routes.draw do
 
   root 'pages#home'
   resources :blogs
+  resources :apartment_enquiries
   resources :apartments, only: :show
   resources :pages, path: '', only: :show
 

@@ -10,6 +10,30 @@
         .google_maps_embed
           %iframe{:allowfullscreen => "", :frameborder => "0", :height => "400", :src => "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d38702.785939379675!2d1.164788!3d52.679408!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xe7aa13dc58c5c5fe!2sSwan+Inn!5e0!3m2!1sen!2suk!4v1463873452306", :style => "border:0", :width => "100%"}
         .arrangement_form
+          = form_for @enquiry do |f|
+
+            .field
+              = f.label :name
+              = f.text_field :name
+            .field
+              = f.label :email
+              = f.email_field :email
+            .field
+              = f.label :phone
+              = f.text_field :phone
+            .field
+              = f.label :data_to
+              = f.text_field :date_to, class: 'datepicker'
+            .field
+              = f.label :data_from
+              = f.text_field :date_from, class: 'datepicker'
+            .field
+              = f.label :body
+              = f.text_area :body
+
+              = f.hidden_field :apartment_id
+            .actions
+              = f.submit :send
     .apartment_images
       - @apartment.apartment_images.each do |img|
         = image_tag img.image.thumb
