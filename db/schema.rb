@@ -10,10 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160731203828) do
+ActiveRecord::Schema.define(version: 20160801005450) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "apartment_enquiries", force: :cascade do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "phone"
+    t.datetime "data_to"
+    t.datetime "data_from"
+    t.text     "body"
+    t.integer  "apartment_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["apartment_id"], name: "index_apartment_enquiries_on_apartment_id", using: :btree
+  end
 
   create_table "apartment_images", force: :cascade do |t|
     t.string   "image"
@@ -35,8 +48,10 @@ ActiveRecord::Schema.define(version: 20160731203828) do
     t.string   "name"
     t.text     "body"
     t.text     "summary"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.text     "infomation"
+    t.string   "maps_embed_code"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   create_table "blogs", force: :cascade do |t|
@@ -49,6 +64,14 @@ ActiveRecord::Schema.define(version: 20160731203828) do
   create_table "categories", force: :cascade do |t|
     t.string   "name"
     t.string   "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "enquiries", force: :cascade do |t|
+    t.string   "name"
+    t.string   "email"
+    t.text     "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

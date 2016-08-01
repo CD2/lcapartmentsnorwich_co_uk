@@ -49,7 +49,7 @@ class Admin::ApartmentsController < AdminController
   end
 
   def set_apartment
-    @apartment = Apartment.find(params[:id])
+    @apartment = Apartment.get_from_url(params[:id])
   end
 
 end

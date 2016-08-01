@@ -1,0 +1,3 @@
+= render 'index', name: 'Enquiries', object: @enquiries, columns: [:name, :email] do |enquiry|
+  = link_to 'View', [:admin, enquiry]
+  = link_to 'Delete', [:admin, enquiry], method: :delete, data: {confirm: 'This cannot be undone, are you sure you want to delete this?'}

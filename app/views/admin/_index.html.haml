@@ -1,4 +1,4 @@
-- provide :title, controller_name
+- provide :title, controller_name.humanize
 
 %table
   %thead
@@ -17,4 +17,4 @@
     - else
       %tr.no_results
         %td{colspan: columns.count + 1}
-          = "No #{controller_name} found."
+          = "No #{controller_name.humanize} found."
