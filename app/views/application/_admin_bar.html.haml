@@ -1,0 +1,8 @@
+#on_site_admin_bar
+  - if content_for?(:edit)
+    .edit_link
+      = yield :edit
+  = render 'admin/side_menu'
+
+  .right_link
+    = link_to 'Logout', destroy_user_session_path, method: :delete
