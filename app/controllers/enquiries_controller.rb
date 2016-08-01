@@ -9,7 +9,7 @@ class EnquiriesController < ApplicationController
       @enquiry = Enquiry.new(enquiry_params)
 
       if @enquiry.save
-        redirect_to contact_us_thanks_path
+        redirect_to thanks_enquiries_path
       else
         render :new
       end
@@ -21,8 +21,7 @@ class EnquiriesController < ApplicationController
 
     private
 
-    # Only allow a trusted parameter "white list" through.
     def enquiry_params
-      params.require(:enquiry).permit(:name, :email, :message)
+      params.require(:enquiry).permit(:name, :email, :body)
     end
 end

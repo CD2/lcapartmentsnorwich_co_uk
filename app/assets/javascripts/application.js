@@ -12,8 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require jquery-ui
+//= require turbolinks
 //= require_tree .
 //= require ckeditor/init
 
@@ -27,5 +27,5 @@ $(window).scroll(function() {
 }); //missing );
 
 $(window).on('load page:load', function() {
-  $('.datepicker').datepicker()
+  $('.datepicker').datepicker({dateFormat: "dd-mm-yy"})
 });

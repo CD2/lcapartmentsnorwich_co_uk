@@ -23,7 +23,7 @@ Rails.application.routes.draw do
   get '/contact-us', to: 'enquiries#new'
 
   resources :blogs
-  resources :enquiries, path: 'contact-us', only: [:new, :create] do
+  resources :enquiries, path: 'contact-us', only: [:create] do
     collection {get :thanks}
   end
   resources :apartment_enquiries

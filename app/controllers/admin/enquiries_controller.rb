@@ -11,7 +11,7 @@ class Admin::EnquiriesController < AdminController
   def destroy
     @enquiry.destroy!
     flash[:success] = "Enquiry Destroyed"
-    redirect_to admin_enquirys_path
+    redirect_to admin_enquiries_path
   end
 
   private
