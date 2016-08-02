@@ -14,10 +14,10 @@
     = f.select :apartment_id, Apartment.pluck(:name, :id) + [['Other', -1]], prompt: '', selected: f.object&.apartment_id
 .field_pair
   .field
-    = f.label :data_to
+    = f.label :date_to
     = f.text_field :date_to, class: 'datepicker'
   .field
-    = f.label :data_from
+    = f.label :date_from
     = f.text_field :date_from, class: 'datepicker'
 .field
   = f.label :body, 'Comments'

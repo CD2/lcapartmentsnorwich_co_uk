@@ -4,7 +4,7 @@ class Page < ApplicationRecord
   has_many :apartments, :through => :apartment_pages
 
   has_many :banner_images
-  accepts_nested_attributes_for :banner_images
+  accepts_nested_attributes_for :banner_images, allow_destroy: true
 
   scope :menu_pages, -> {where(in_menu: true)}
 
