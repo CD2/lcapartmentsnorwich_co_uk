@@ -24,7 +24,9 @@ module MetaDataConcern
   class_methods do
     
     def get_from_url url_alias
-      MetaData.where(meta_type: self.name, url_alias: url_alias).first.meta rescue nil
+      meta_data = MetaData.where(meta_type: self.name, url_alias: url_alias).first
+      raise ActiveRecord::RecordNotFound unless meta_data
+      meta_data.meta
     end
     
   end
