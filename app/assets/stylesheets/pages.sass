@@ -7,6 +7,8 @@
   box-sizing: border-box
   text-align: center
   position: relative
+  @media screen and (max-width: 850px)
+    padding-top: 140px
   h2, p
     color: white
   &.large_banner
@@ -14,7 +16,7 @@
 
 #banner_text
   padding: 24px
-  background-color: rgba(black, 0.5)
+  background-color: rgba($primary_color, 0.5)
   z-index: 2
   position: relative
 
@@ -38,6 +40,7 @@
   +flex(1)
   padding: 40px
   box-sizing: border-box
+  min-width: 300px
   h1, h2, h3, p
     color: white
   p
@@ -56,4 +59,4 @@
 .apartment_preview_image
   +flex(2)
   background-size: cover
-  background-position: 50%
+  background-position: 50

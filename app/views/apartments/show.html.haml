@@ -13,11 +13,10 @@
         = raw @apartment.body
         .summary_stats
           = raw @apartment.information
-      .side_column
-        .arrangement_form
-          %h3 Arrangement Form
-          = form_for @enquiry do |f|
-            = render 'enquiries/fields', f:f
+      .side_column.form
+        = form_for @enquiry do |f|
+          %h2 Arrangement Form
+          = render 'enquiries/fields', f:f
         .google_maps_embed
           %iframe{:allowfullscreen => "", :frameborder => "0", :height => "400", :src => "#{@apartment.maps_embed_code}", :style => "border:0", :width => "100%"}
 .apartment_images
