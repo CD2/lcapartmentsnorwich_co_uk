@@ -6,7 +6,8 @@
     #banner_images.unslide
       %ul
         - @page.banner_images.each do |image|
-          %li.slide{style: "background-image: url(#{image.image})"}
+          - unless image.image.blank?
+            %li.slide{style: "background-image: url(#{image.image})"}
   #banner_text
     %h2 Stylish, Serviced Apartments in the Heart of the Historic City
     %p

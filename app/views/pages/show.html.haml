@@ -4,7 +4,8 @@
     #banner_images.unslide
       %ul
         - @page.banner_images.each do |image|
-          %li.slide{style: "background-image: url(#{image.image})"}
+          - unless image.image.blank?
+            %li.slide{style: "background-image: url(#{image.image})"}
 #content_wrapper
   #content
     .split_page
