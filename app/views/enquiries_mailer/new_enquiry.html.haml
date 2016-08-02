@@ -15,11 +15,11 @@
 %p
   %b Date From:
   %br
-  = @enquiry.date_from
+  = @enquiry.date_from.strftime('%d/%m/%Y')
 %p
   %b Date To:
   %br
-  = @enquiry.date_to
+  = @enquiry.date_to.strftime('%d/%m/%Y')
 %p
   %b Body:
   %br

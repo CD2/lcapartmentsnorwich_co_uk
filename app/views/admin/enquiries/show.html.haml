@@ -9,9 +9,9 @@
 %h4 Phone
 %p= @enquiry.phone
 %h4 Date From
-%p= @enquiry.date_from
+%p= @enquiry.date_from.strftime('%d/%m/%Y')
 %h4 Date To
-%p= @enquiry.date_to
+%p= @enquiry.date_to.strftime('%d/%m/%Y')
 %h4 Body
 %p= simple_format @enquiry.body
 %h4 Apartment
