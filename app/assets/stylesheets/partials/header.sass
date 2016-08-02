@@ -5,6 +5,9 @@
     padding: 10px
   @media screen and (max-width: 850px)
     position: absolute
+    height: 110px
+  @media screen and (max-width: 600px)
+    height: 120px
   color: white
   background-color: rgba($primary_color,0.7)
   transition: 0.3s
@@ -23,11 +26,12 @@
   position: absolute
   left: 0
   top: 0
+  width: 310px
   @media screen and (max-width: 1100px)
     width: 80px
     overflow: hidden
     img
-      max-width: 1000px
+      max-width: 310px
   @media screen and (max-width: 850px)
     img
       max-width: 100%
@@ -35,6 +39,8 @@
     height: auto
     left: 20px
     top: 40px
+  @media screen and (max-width: 600px)
+    top: 55px
 
 #contact_header_details
   position: absolute
@@ -70,12 +76,16 @@
   @media screen and (max-width: 850px)
     text-align: right
     transform: translateX(100%)
+    width: 0
+    overflow: hidden
     transition: 0.3s
     background-color: $secondary_color
-    padding: 100px 40px 20px
+    padding: 100px 0
     height: 100vh
     .menu_open &
       transform: translateX(0)
+      padding: 100px 40px 20px
+      width: 160px
 
   right: 0
   text-transform: uppercase
@@ -98,6 +108,8 @@
     position: absolute
     font-size: 2rem
     top: 55px
+    @media screen and (max-width: 600px)
+      top: 65px
     right: 30px
     cursor: pointer
     transition: 0.3s

@@ -12,9 +12,8 @@
       .main_column.body_text
         = raw @page.body
 
-      .side_column
-        .arrangement_form
-          %h3 Arrange a callback now
-          = form_for @enquiry do |f|
-            = render 'form_errors', object: f.object
-            = render 'fields', f: f
+      .side_column.form
+        = form_for @enquiry do |f|
+          %h2 Arrange a callback now
+          = render 'form_errors', object: f.object
+          = render 'fields', f: f
