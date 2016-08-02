@@ -17,6 +17,7 @@
 //= require_tree .
 //= require ckeditor/init
 //= require jquery-unslider
+//= require lightbox
 
 $(window).scroll(function() {
     var scroll = $(window).scrollTop();
@@ -30,7 +31,7 @@ $(window).scroll(function() {
 $(window).on('load', function() {
   $('.datepicker').datepicker({dateFormat: "dd-mm-yy"})
 
-  $('.apartment_images_slideshow').unslider({
+  $('.unslide').unslider({
     autoplay: true,
     arrows: false,
     speed: 500
@@ -38,4 +39,9 @@ $(window).on('load', function() {
 
 });
 
+lightbox.option({
+  'fadeDuration': 100,
+  'resizeDuration': 100,
+  'wrapAround': true
+})
 

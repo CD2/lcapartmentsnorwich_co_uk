@@ -44,7 +44,7 @@ class Admin::ApartmentsController < AdminController
   private
 
   def apartment_params
-    params.require(:apartment).permit(:name, :body, :summary, :information, :maps_embed_code, :new_apartment_images, apartment_images_attributes: [:id, :image, :_destroy])
+    params.require(:apartment).permit(:name, :body, :summary, :order, :information, :maps_embed_code, :new_apartment_images, apartment_images_attributes: [:id, :image, :_destroy])
   end
 
   def set_apartment

@@ -1,6 +1,12 @@
 = provide :edit, link_to('Edit', [:edit, :admin, @page])
 
+
 #banner.large_banner{style: "background-image: url(#{@page.banner})"}
+  - if @page.banner_images.count > 1
+    #banner_images.unslide
+      %ul
+        - @page.banner_images.each do |image|
+          %li.slide{style: "background-image: url(#{image.image})"}
   #banner_text
     %h2 Stylish, Serviced Apartments in the Heart of the Historic City
     %p
@@ -17,11 +23,10 @@
       .main_column.body_text
         = raw @page.body
       .side_column.form
-        = form_for Enquiry.new do |f|
+        = form_for ApartmentEnquiry.new do |f|
           %h2 Get in touch
-          = render 'enquiries/fields', f: f
+          = hidden_field_tag :referer, url_for
+          = render 'apartments/fields', f: f
 
     #apartment_teasers
       = render partial: 'apartments/teaser', collection: Apartment.all, as: :apartment
-
-

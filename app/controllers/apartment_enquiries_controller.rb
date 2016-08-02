@@ -1,12 +1,20 @@
 class ApartmentEnquiriesController < ApplicationController
 
+    def new
+      @page = Page.get_from_url('apartment-enquiries')
+      @enquiry = ApartmentEnquiry.new
+    end
+
     def create
       @enquiry = ApartmentEnquiry.new(enquiry_params)
+      @page = Page.get_from_url('apartment-enquiries')
       @apartment = @enquiry.apartment
+      byebug
       if @enquiry.save
-        redirect_to @apartment
+
+        redirect_to url_for(params[:referer]) || @apartment || root_url
       else
-        render @apartment
+        render :new
       end
     end
 

@@ -5,7 +5,22 @@
   = f.label :email
   = f.email_field :email
 .field
-  = f.label :body
+  = f.label :phone
+  = f.text_field :phone
+  - if f.object.apartment_id.present?
+    = f.hidden_field :apartment_id
+  .field
+    = f.label :body, 'Which Apartment?'
+    = f.select :apartment_id, Apartment.pluck(:name, :id) + [['Other', -1]], prompt: '', selected: f.object&.apartment_id
+.field_pair
+  .field
+    = f.label :data_to
+    = f.text_field :date_to, class: 'datepicker'
+  .field
+    = f.label :data_from
+    = f.text_field :date_from, class: 'datepicker'
+.field
+  = f.label :body, 'Comments'
   = f.text_area :body
 .actions
   = f.submit :send

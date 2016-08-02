@@ -33,6 +33,9 @@
     = f.file_field :new_apartment_images, multiple: true
 
 
+  .field
+    = f.label :order
+    = f.number_field :order
   .actions
     = f.submit 'Save'
     = f.submit 'Cancel', class: 'cancel_button'

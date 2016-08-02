@@ -1,6 +1,11 @@
 = provide :edit, link_to('Edit', [:edit, :admin, @apartment])
 
 #banner{style: "background-image: url(#{@apartment.cover_image})"}
+  - if @apartment.apartment_images.count > 1
+    #banner_images.unslide
+      %ul
+        - @apartment.apartment_images.each do |image|
+          %li.slide{style: "background-image: url(#{image.image})"}
 #content_wrapper
   #content
     .split_page
@@ -12,33 +17,11 @@
         .arrangement_form
           %h3 Arrangement Form
           = form_for @enquiry do |f|
-
-            .field
-              = f.label :name
-              = f.text_field :name
-            .field
-              = f.label :email
-              = f.email_field :email
-            .field
-              = f.label :phone
-              = f.text_field :phone
-            .field
-              = f.label :data_to
-              = f.text_field :date_to, class: 'datepicker'
-            .field
-              = f.label :data_from
-              = f.text_field :date_from, class: 'datepicker'
-            .field
-              = f.label :body
-              = f.text_area :body
-
-              = f.hidden_field :apartment_id
-            .actions
-              = f.submit :send
+            = render 'apartments/fields', f:f
         .google_maps_embed
           %iframe{:allowfullscreen => "", :frameborder => "0", :height => "400", :src => "#{@apartment.maps_embed_code}", :style => "border:0", :width => "100%"}
 .apartment_images
-  .apartment_images_slideshow
-    %ul
-      - @apartment.apartment_images.each do |img|
-        %li{style: "background-image: url(#{img.image})"}
+  .apartment_images_inner
+    - @apartment.apartment_images.each do |img|
+      = link_to 'Apartment Image', img.image.url, data: {lightbox: 'apartment_images'}, style: "background-image: url(#{img.image})"
+      / # .apartment_image{style: "background-image: url(#{img.image})"}

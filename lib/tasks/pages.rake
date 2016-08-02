@@ -102,8 +102,9 @@ task gen_pages: :environment do
     in_menu: false,
     home: true,
     protected: true,
-    banner: File.open(File.join(Rails.root, "seed_data/banners/home.jpg"))
-  ).meta_data.update(
+  ).banner_images.create(
+    image: File.open(File.join(Rails.root, "seed_data/banners/home.jpg"))
+  ).page.meta_data.update(
     url_alias: 'home',
     description: 'If you’re visiting for business or pleasure, our stylish serviced apartments in and around the medieval city of Norwich make the perfect place to stay.',
     title: 'Serviced Apartments Norwich | Luxury City Apartments'
@@ -113,9 +114,10 @@ task gen_pages: :environment do
       name: 'Accommodation',
       body: '<h1>Serviced Apartments Norwich</h1><p>Our luxury serviced apartments, cottages and houses are a great way to stay and enjoy luxury accommodation with space and privacy that perhaps you would not necessarily experience when staying in a hotel at such an affordable price.Whether visiting for business or pleasure, our stylish serviced apartments in and around the medieval City of Norwich make a great centre point base for your visit to the City or Norfolk countryside.</p>',
       in_menu: true,
-      banner: File.open(File.join(Rails.root, "seed_data/banners/accommodation.jpg")),
       apartment_ids: [1, 2, 3, 4]
-  ).meta_data.update(
+  ).banner_images.create(
+    image: File.open(File.join(Rails.root, "seed_data/banners/accommodation.jpg")),
+  ).page.meta_data.update(
       url_alias: 'accommodation',
       description: 'We provide luxury serviced Norwich apartments to rent in and around the city centre. Our serviced apartments make the perfect place to stay in this wonderful city.',
       title: 'Norwich Serviced Apartments | Luxury City Apartments'
@@ -125,8 +127,9 @@ task gen_pages: :environment do
       name: 'Corporate',
       body: '<h1>Norwich Apartments for Corporate Travelers</h1>',
       in_menu: true,
-      banner: File.open(File.join(Rails.root, "seed_data/banners/corporate.jpg"))
-  ).meta_data.update(
+  ).banner_images.create(
+    image: File.open(File.join(Rails.root, "seed_data/banners/corporate.jpg"))
+  ).page.meta_data.update(
       url_alias: 'corporate',
       description: 'We offer a variety of Norwich serviced apartments perfect for corporate purposes. Our apartments make the perfect stay to see this mediaeval city.',
       title: 'Norwich Serviced Apartments Corporate Travelers | Luxury City Apartments'
@@ -136,8 +139,9 @@ task gen_pages: :environment do
       name: 'Leisure',
       body: '<h1>Holiday Apartments for Leisure in Norwich</h1>',
       in_menu: true,
-      banner: File.open(File.join(Rails.root, "seed_data/banners/leisure.jpg"))
-  ).meta_data.update(
+  ).banner_images.create(
+    image: File.open(File.join(Rails.root, "seed_data/banners/leisure.jpg"))
+  ).page.meta_data.update(
       url_alias: 'leisure',
       description: 'Our holiday apartments in Norwich are perfect for a leisure stay. It’s a great way to see the mediaeval city, with cobble lanes and unique spots you’ll soon be amazed.',
       title: 'Holiday Apartments Norwich, Leisure | Luxury City Apartments '
@@ -147,8 +151,9 @@ task gen_pages: :environment do
       name: 'Visit Norwich',
       body: '<h1>Visit Norwich</h1>',
       in_menu: true,
-      banner: File.open(File.join(Rails.root, "seed_data/banners/visit-norwich.jpg"))
-  ).meta_data.update(
+  ).banner_images.create(
+    image: File.open(File.join(Rails.root, "seed_data/banners/visit-norwich.jpg"))
+  ).page.meta_data.update(
       url_alias: 'visit-norwich',
       description: 'There are a lot of places to see in Norwich, so why not visit Norwich and stay in one of our Norwich apartments providing a great way to see the City.',
       title: 'Visit Norwich | Places To See In Norwich| Luxury City Apartments '
@@ -158,8 +163,9 @@ task gen_pages: :environment do
       name: 'About Us',
       body: '<h1>About Us</h1>',
       in_menu: true,
-      banner: File.open(File.join(Rails.root, "seed_data/banners/about-us.jpg"))
-  ).meta_data.update(
+  ).banner_images.create(
+    image: File.open(File.join(Rails.root, "seed_data/banners/about-us.jpg"))
+  ).page.meta_data.update(
       url_alias: 'about-us',
       description: 'Luxury City Apartments provides a range of serviced apartments in and around the city of Norwich, for either leisure or corporate traveler.',
       title: 'About Us | Luxury City Apartments'
@@ -169,8 +175,9 @@ task gen_pages: :environment do
       name: 'Let your property',
       body: '<h1>Let your property in Norwich</h1>',
       in_menu: true,
-      banner: File.open(File.join(Rails.root, "seed_data/banners/let-your-property.jpg"))
-  ).meta_data.update(
+  ).banner_images.create(
+    image: File.open(File.join(Rails.root, "seed_data/banners/let-your-property.jpg"))
+  ).page.meta_data.update(
       url_alias: 'let-your-property',
       description: 'Luxury City Apartments can help you let your property. If you are thinking about letting your property out in Norwich Luxury City Apartments would like to help you. ',
       title: 'Let your property | Luxury City Apartments'
@@ -182,13 +189,13 @@ task gen_pages: :environment do
       in_menu: false,
       contact: true,
       protected: true,
-      banner: File.open(File.join(Rails.root, "seed_data/banners/contact-us.jpg"))
-  ).meta_data.update(
+  ).banner_images.create(
+    image: File.open(File.join(Rails.root, "seed_data/banners/contact-us.jpg"))
+  ).page.meta_data.update(
       url_alias: 'contact-us',
       description: 'Contact us today for any questions or bookings you have on any of our Norwich apartments.',
       title: 'Contact Us | Luxury City Apartments'
   )
-
 
 
 end

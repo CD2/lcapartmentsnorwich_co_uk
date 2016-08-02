@@ -1,5 +1,10 @@
 = provide :edit, link_to('Edit', [:edit, :admin, @page])
 #banner{style: "background-image: url(#{@page.banner})"}
+  - if @page.banner_images.count > 1
+    #banner_images.unslide
+      %ul
+        - @page.banner_images.each do |image|
+          %li.slide{style: "background-image: url(#{image.image})"}
 #content_wrapper
   #content
     .split_page

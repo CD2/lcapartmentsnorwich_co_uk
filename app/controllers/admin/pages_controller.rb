@@ -45,7 +45,10 @@ class Admin::PagesController < AdminController
   private
 
   def page_params
-    params.require(:page).permit(:name, :body, :banner, apartment_ids: [], meta_data_attributes: [:id, :title, :description, :url_alias])
+    params.require(:page).permit(:name, :body, :banner,
+      new_banner_images: [], apartment_ids: [],
+      meta_data_attributes: [:id, :title, :description, :url_alias], 
+      banner_images_attributes: [:id, :image, :_destroy])
   end
 
   def set_page

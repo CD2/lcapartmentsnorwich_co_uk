@@ -24,11 +24,19 @@
     .field
       = f.label :body
       = f.cktext_area :body
+
     = field_set_tag 'Banner' do
-      - if @page.banner
-        .preview= image_tag @page.banner
-      .field
-        = f.file_field :banner
+      = f.fields_for :banner_images do |image_f|
+        - if image_f.object.image.url.present?
+          .preview.destroyable
+            = image_f.hidden_field :id
+            = image_f.check_box :_destroy, class: '_destroy'
+            = image_tag image_f.object.image
+            = image_f.label :_destroy, 'Remove Image'
+
+      = f.label :new_banner_images
+      = f.file_field :new_banner_images, multiple: true
+
     - unless @page.protected?
       .field
         = f.label :in_menu, 'In Menu?'

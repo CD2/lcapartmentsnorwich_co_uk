@@ -10,22 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160801151912) do
+ActiveRecord::Schema.define(version: 20160802111504) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "apartment_enquiries", force: :cascade do |t|
-    t.string   "name"
-    t.string   "email"
-    t.string   "phone"
-    t.datetime "date_to"
-    t.datetime "date_from"
-    t.text     "body"
-    t.integer  "apartment_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-  end
 
   create_table "apartment_images", force: :cascade do |t|
     t.string   "image"
@@ -51,6 +39,14 @@ ActiveRecord::Schema.define(version: 20160801151912) do
     t.string   "maps_embed_code"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.integer  "order"
+  end
+
+  create_table "banner_images", force: :cascade do |t|
+    t.string   "image"
+    t.integer  "page_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "blogs", force: :cascade do |t|
@@ -85,9 +81,13 @@ ActiveRecord::Schema.define(version: 20160801151912) do
   create_table "enquiries", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
+    t.string   "phone"
+    t.datetime "date_to"
+    t.datetime "date_from"
     t.text     "body"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "apartment_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "meta_data", force: :cascade do |t|
@@ -103,7 +103,6 @@ ActiveRecord::Schema.define(version: 20160801151912) do
   create_table "pages", force: :cascade do |t|
     t.string   "name"
     t.text     "body"
-    t.string   "banner"
     t.boolean  "in_menu",    default: false
     t.boolean  "home",       default: false
     t.boolean  "contact",    default: false

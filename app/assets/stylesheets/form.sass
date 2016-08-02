@@ -9,15 +9,19 @@
     &.message
       width: 100%
 
-input[type=text], input[type=email], input[type=password]
-  height: 16px
+input[type=text], input[type=email], input[type=password], input[type=number], select
   border: none
   border-bottom: 1px solid #bbb
-  padding: 12px 0
+  padding: 10px 5px
   color: #8f8d87
   width: 100%
   float: left
   margin-bottom: 10px
+  box-sizing: border-box
+  background: white
+  transition: 0.4s border-color
+  &:focus
+    border: 1px solid $primary_color
 
 textarea
   width: 100%
@@ -28,6 +32,11 @@ textarea
   background: white
   line-height: 40px
   color: #8f8d87
+  box-sizing: border-box
+  margin-bottom: 10px
+  transition: 0.4s border-color
+  &:focus
+    border: 1px solid $primary_color
 
 [type=submit]
   background-color: $blue
@@ -39,6 +48,17 @@ textarea
   text-transform: uppercase
   padding: 0 40px 0
   text-align: right
+  &:focus
+    border: 1px solid $secondary_color
 
 form
   padding-top: 40px
+
+
+.field_pair
+  .field
+    display: inline-block
+    width: 49%
+
+    &:last-child
+      float: right
