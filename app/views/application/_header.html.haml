@@ -16,6 +16,7 @@
       = link_to 'Home', root_url
       - Page.menu_pages.find_each do |page|
         = link_to page.name, page
+      = link_to 'Visit Norwich', gallery_url
       = link_to 'Contact Us', '/contact-us'
     #menu_toggle
       = link_to fa_icon('bars'), 'javascript:void(0)'

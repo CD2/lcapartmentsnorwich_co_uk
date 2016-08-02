@@ -1,0 +1,16 @@
+= provide :edit, link_to('Manage Images', [:admin, :galleries])
+
+#banner{style: "background-image: url(#{@page.banner})"}
+  - if @page.banner_images.count > 1
+    #banner_images.unslide
+      %ul
+        - @page.banner_images.each do |image|
+          %li.slide{style: "background-image: url(#{image.image})"}
+#content_wrapper
+  #content
+    .main_column.body_text
+      = raw @page.body
+        
+    #gallery_images
+      - @images.each do |image|      
+        .gallery_image= link_to image_tag(image.image.thumb), image.image.url, data: {lightbox: 'gallery_images'}

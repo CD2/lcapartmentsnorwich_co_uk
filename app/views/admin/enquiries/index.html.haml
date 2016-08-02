@@ -23,5 +23,5 @@
             = link_to 'Delete', [:admin, enquiry], method: :delete, data: {confirm: 'This cannot be undone, are you sure you want to delete this?'}
     - else
       %tr.no_results
-        %td{colspan: columns.count + 1}
+        %td{colspan: 4}
           = "No enquiries found."

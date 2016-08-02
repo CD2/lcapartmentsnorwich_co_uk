@@ -12,6 +12,7 @@ Rails.application.routes.draw do
       resources :enquiries, only: [:index, :show, :destroy]
     end
     resources :pages, except: [:show]
+    resources :galleries, path: 'gallery', only: [:index, :create, :destroy]
     resources :blogs, except: [:show]
     resources :users, except: [:show]
     resources :enquiries, only: [:index, :show, :destroy]
@@ -22,6 +23,7 @@ Rails.application.routes.draw do
   root 'pages#home'
 
 
+  get 'visit-norwich', to: 'gallery#index', as: :gallery
   resources :blogs
   get '/contact-us', to: 'enquiries#new'
   resources :enquiries, path: 'contact-us', only: [:create] do

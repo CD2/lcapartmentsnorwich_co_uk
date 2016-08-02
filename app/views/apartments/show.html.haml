@@ -23,4 +23,3 @@
   .apartment_images_inner
     - @apartment.apartment_images.each do |img|
       = link_to 'Apartment Image', img.image.url, data: {lightbox: 'apartment_images'}, style: "background-image: url(#{img.image})"
-      / # .apartment_image{style: "background-image: url(#{img.image})"}
