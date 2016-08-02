@@ -10,8 +10,11 @@
     .split_page
       .main_column.body_text
         = raw @page.body
-      .side_column
-
+      .side_column.form
+        = form_for Enquiry.new do |f|
+          %h2 Get in touch
+          = hidden_field_tag :referer, url_for
+          = render 'enquiries/fields', f: f
 
 
 #apartment_previews

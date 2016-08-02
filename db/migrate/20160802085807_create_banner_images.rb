@@ -8,10 +8,10 @@ class CreateBannerImages < ActiveRecord::Migration[5.0]
     end
 
     Page.find_each do |page|
-      page.banner_images.create!(image: page.banner)
+      page.banner_images.create!(image: page.banner.file)
     end
     
-    remove_column :pages, :banner
+    # remove_column :pages, :banner
 
   end
 end

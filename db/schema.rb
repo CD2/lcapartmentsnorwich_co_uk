@@ -103,6 +103,7 @@ ActiveRecord::Schema.define(version: 20160802111504) do
   create_table "pages", force: :cascade do |t|
     t.string   "name"
     t.text     "body"
+    t.string   "banner"
     t.boolean  "in_menu",    default: false
     t.boolean  "home",       default: false
     t.boolean  "contact",    default: false

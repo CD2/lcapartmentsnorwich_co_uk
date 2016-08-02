@@ -22,7 +22,7 @@ class Enquiry < ApplicationRecord
   private
 
   def send_email
-    # EnquiriesMailer.send_enquiry(self).deliver_later
+    EnquiriesMailer.new_enquiry(self).deliver_now
   end
 
 end
