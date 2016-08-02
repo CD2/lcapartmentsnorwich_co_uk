@@ -4,8 +4,8 @@ You have a new enquiry.
 Name: <%= @enquiry.name %>
 Email: <%= @enquiry.email %>
 Phone: <%= @enquiry.phone %>
-Date From: <%= @enquiry.date_from %>
-Date To: <%= @enquiry.date_to %>
-Apartment: <%= @enquiry.apartment.name %>
+Date From: <%= @enquiry.date_from.strftime('%d/%m/%Y') %>
+Date To: <%= @enquiry.date_to.strftime('%d/%m/%Y') %>
+Apartment: <%= @enquiry.apartment&.name %>
 
 Comment: <%= simple_format @enquiry.body %>
