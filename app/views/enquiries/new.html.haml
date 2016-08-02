@@ -1,4 +1,6 @@
-= provide :edit, link_to('View Enquiries', [:admin, :enquiries])
+- provide :edit, link_to('View Enquiries', [:admin, :enquiries])
+- provide :title, @page.title
+- provide :meta_description, @page.description
 
 #banner{style: "background-image: url(#{@page.banner})"}
   - if @page.banner_images.count > 1

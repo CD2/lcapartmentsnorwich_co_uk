@@ -1,4 +1,6 @@
-= provide :edit, link_to('Edit', [:edit, :admin, @apartment])
+- provide :edit, link_to('Edit', [:edit, :admin, @apartment])
+- provide :title, @apartment.title
+- provide :meta_description, @apartment.description
 
 #banner{style: "background-image: url(#{@apartment.cover_image})"}
   - if @apartment.apartment_images.count > 1

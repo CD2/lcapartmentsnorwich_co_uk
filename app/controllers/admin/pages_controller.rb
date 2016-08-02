@@ -45,7 +45,7 @@ class Admin::PagesController < AdminController
   private
 
   def page_params
-    params.require(:page).permit(:name, :body, :banner,
+    params.require(:page).permit(:name, :body, :banner, :contact_form,
       new_banner_images: [], apartment_ids: [],
       meta_data_attributes: [:id, :title, :description, :url_alias], 
       banner_images_attributes: [:id, :image, :_destroy])

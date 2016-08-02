@@ -1,5 +1,6 @@
-= provide :edit, link_to('Edit', [:edit, :admin, @page])
-
+- provide :edit, link_to('Edit', [:edit, :admin, @page])
+- provide :title, @page.title
+- provide :meta_description, @page.description
 
 #banner.large_banner{style: "background-image: url(#{@page.banner})"}
   - if @page.banner_images.count > 1

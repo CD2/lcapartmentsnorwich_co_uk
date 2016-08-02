@@ -40,6 +40,11 @@
       .field
         = f.label :in_menu, 'In Menu?'
         = f.check_box :in_menu
+    - unless @page.home? || @page.contact?
+      .field
+        = f.label :contact_form, 'Display contact form?'
+        = f.check_box :contact_form
+
 
   = field_set_tag 'Apartments' do
     Which apartments should display?
