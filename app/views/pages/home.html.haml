@@ -23,10 +23,10 @@
       .main_column.body_text
         = raw @page.body
       .side_column.form
-        = form_for ApartmentEnquiry.new do |f|
+        = form_for Enquiry.new do |f|
           %h2 Get in touch
           = hidden_field_tag :referer, url_for
-          = render 'apartments/fields', f: f
+          = render 'enquiries/fields', f: f
 
     #apartment_teasers
       = render partial: 'apartments/teaser', collection: Apartment.all, as: :apartment

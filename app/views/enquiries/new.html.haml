@@ -16,4 +16,5 @@
         .arrangement_form
           %h3 Arrange a callback now
           = form_for @enquiry do |f|
+            = render 'form_errors', object: f.object
             = render 'fields', f: f
