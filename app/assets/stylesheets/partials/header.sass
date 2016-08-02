@@ -1,7 +1,10 @@
 #header
-  position: fixed
   width: 100%
-  padding: 10px
+  @media screen and (min-width: 850px)
+    position: fixed
+    padding: 10px
+  @media screen and (max-width: 850px)
+    position: absolute
   color: white
   background-color: rgba($primary_color,0.7)
   transition: 0.3s
@@ -20,8 +23,18 @@
   position: absolute
   left: 0
   top: 0
-  img
-    height: 80px
+  @media screen and (max-width: 1100px)
+    width: 80px
+    overflow: hidden
+    img
+      max-width: 1000px
+  @media screen and (max-width: 850px)
+    img
+      max-width: 100%
+    width: 230px
+    height: auto
+    left: 20px
+    top: 40px
 
 #contact_header_details
   position: absolute
@@ -31,6 +44,18 @@
   font-size: 0.875rem
   letter-spacing: 2px
   font-weight: 500
+  @media screen and (max-width: 1150px)
+    font-size: 0.8rem
+  @media screen and (max-width: 850px)
+    width: 100%
+    top: 0
+    background-color: $secondary_color
+    text-align: center
+    letter-spacing: 0
+    padding: 10px
+    box-sizing: border-box
+    span
+      white-space: nowrap
   a
     color: white
     margin-left: 5px
@@ -40,11 +65,43 @@
 
 #main_menu
   position: absolute
-  bottom: 15px
+  @media screen and (min-width: 850px)
+    bottom: 15px
+  @media screen and (max-width: 850px)
+    text-align: right
+    transform: translateX(100%)
+    transition: 0.3s
+    background-color: $secondary_color
+    padding: 100px 40px 20px
+    height: 100vh
+    .menu_open &
+      transform: translateX(0)
+
   right: 0
   text-transform: uppercase
   font-weight: 500
   font-size: 0.875rem
+  @media screen and (max-width: 1150px)
+    font-size: 0.8rem
   a
     color: white
     margin-left: 12px
+    @media screen and (max-width: 850px)
+      display: block
+      line-height: 2.5rem
+
+
+#menu_toggle
+  display: none
+  @media screen and (max-width: 850px)
+    display: block
+    position: absolute
+    font-size: 2rem
+    top: 55px
+    right: 30px
+    cursor: pointer
+    transition: 0.3s
+    .menu_open &
+      right: -10px
+    a
+      color: white

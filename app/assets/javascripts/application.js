@@ -37,6 +37,10 @@ $(window).on('load', function() {
     speed: 500
   })
 
+    $('#menu_toggle').on('click', function () {
+        $('html').toggleClass('menu_open')
+    })
+
 });
 
 lightbox.option({
