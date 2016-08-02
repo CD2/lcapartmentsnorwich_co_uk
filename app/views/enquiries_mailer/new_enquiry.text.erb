@@ -6,6 +6,6 @@ Email: <%= @enquiry.email %>
 Phone: <%= @enquiry.phone %>
 Date From: <%= @enquiry.date_from %>
 Date To: <%= @enquiry.date_to %>
-Apartment: <%= @enquiry.apartment.name %>
+Apartment: <%= @enquiry.apartment&.name %>
 
 Comment: <%= simple_format @enquiry.body %>

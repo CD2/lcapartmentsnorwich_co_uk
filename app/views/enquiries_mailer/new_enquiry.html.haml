@@ -1,16 +1,30 @@
 %h1 New website enquiry
 
-%b Name:
-%p= @enquiry.name
-%b Email:
-%p= @enquiry.email
-%b Phone:
-%p= @enquiry.phone
-%b Date From:
-%p= @enquiry.date_from
-%b Date To:
-%p= @enquiry.date_to
-%b Body:
-%p= simple_format @enquiry.body
-%b Apartment:
-%p= @enquiry.apartment&.name
+%p
+  %b Name:
+  %br
+  = @enquiry.name
+%p
+  %b Email:
+  %br
+  = @enquiry.email
+%p
+  %b Phone:
+  %br
+  = @enquiry.phone
+%p
+  %b Date From:
+  %br
+  = @enquiry.date_from
+%p
+  %b Date To:
+  %br
+  = @enquiry.date_to
+%p
+  %b Body:
+  %br
+  = simple_format @enquiry.body
+%p
+  %b Apartment:
+  %br
+  = @enquiry.apartment&.name
