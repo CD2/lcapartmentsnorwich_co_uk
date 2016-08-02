@@ -8,9 +8,16 @@ class Enquiry < ApplicationRecord
     presence: true,
     length: {maximum: 255},
     format: {with:  VALID_EMAIL_REGEX}
-  validates :apartment_id, presence: true
 
   after_create_commit :send_email
+
+  def apartment
+    if self.apartment_id == -1
+      OtherApartment.new
+    else
+      super
+    end
+  end
 
   private
 
@@ -18,4 +25,10 @@ class Enquiry < ApplicationRecord
     # EnquiriesMailer.send_enquiry(self).deliver_later
   end
 
+end
+
+class OtherApartment
+  def name
+    'Other'
+  end
 end

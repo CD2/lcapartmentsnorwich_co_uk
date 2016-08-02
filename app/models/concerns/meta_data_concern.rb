@@ -24,7 +24,7 @@ module MetaDataConcern
   class_methods do
     
     def get_from_url url_alias
-      MetaData.where(meta_type: self.name, url_alias: url_alias).first.meta
+      MetaData.where(meta_type: self.name, url_alias: url_alias).first.meta rescue nil
     end
     
   end

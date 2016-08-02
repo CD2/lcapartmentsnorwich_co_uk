@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   namespace :admin do
     root 'pages#index'
     resources :apartments, except: [:show] do
-      resources :apartment_enquiries, path: 'enquiries', only: [:index, :show, :destroy]
+      resources :enquiries, only: [:index, :show, :destroy]
     end
     resources :pages, except: [:show]
     resources :blogs, except: [:show]

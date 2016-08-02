@@ -1,3 +1,27 @@
-= render 'index', name: 'Enquiries', object: @enquiries, columns: [:name, :email] do |enquiry|
-  = link_to 'View', [:admin, enquiry]
-  = link_to 'Delete', [:admin, enquiry], method: :delete, data: {confirm: 'This cannot be undone, are you sure you want to delete this?'}
+- if @apartment
+  - provide :title, "#{@apartment.name} // "
+- provide :title, 'Enquiries'
+
+%table
+  %thead
+    %tr
+      %th Name
+      %th Email
+      - unless @apartment
+        %th Apartment
+      %th
+  %tbody
+    - if @enquiries.any?
+      - @enquiries.each do |enquiry|
+        %tr
+          %td= enquiry.name
+          %td= enquiry.email
+          - unless @apartment
+            %td= enquiry.apartment&.name
+          %td.action_columns
+            = link_to 'View', [:admin, enquiry]
+            = link_to 'Delete', [:admin, enquiry], method: :delete, data: {confirm: 'This cannot be undone, are you sure you want to delete this?'}
+    - else
+      %tr.no_results
+        %td{colspan: columns.count + 1}
+          = "No enquiries found."

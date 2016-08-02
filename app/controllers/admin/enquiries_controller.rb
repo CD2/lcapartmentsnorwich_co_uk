@@ -1,8 +1,10 @@
 class Admin::EnquiriesController < AdminController
+
+  before_action :set_apartment
   before_action :set_enquiry, only: [:show, :destroy]
 
   def index
-    @enquiries = Enquiry.all
+    @enquiries = enquiry_base.all
   end
 
   def show
@@ -16,8 +18,16 @@ class Admin::EnquiriesController < AdminController
 
   private
 
+    def enquiry_base
+      (@apartment&.enquiries || Enquiry)
+    end
+
+    def set_apartment
+      @apartment = Apartment.get_from_url(params[:apartment_id])
+    end
+
     def set_enquiry
-      @enquiry = Enquiry.find params[:id]
+      @enquiry = enquiry_base.find params[:id]
     end
 
 

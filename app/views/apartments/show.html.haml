@@ -17,7 +17,7 @@
         .arrangement_form
           %h3 Arrangement Form
           = form_for @enquiry do |f|
-            = render 'apartments/fields', f:f
+            = render 'enquiries/fields', f:f
         .google_maps_embed
           %iframe{:allowfullscreen => "", :frameborder => "0", :height => "400", :src => "#{@apartment.maps_embed_code}", :style => "border:0", :width => "100%"}
 .apartment_images

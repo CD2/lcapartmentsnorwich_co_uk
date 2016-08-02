@@ -10,7 +10,7 @@ class Apartment < ApplicationRecord
   has_many :apartment_pages
   has_many :pages, through: :apartment_pages
   
-  has_many :apartment_enquiries
+  has_many :enquiries
 
   before_create :set_default_order_value
 

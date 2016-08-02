@@ -1,8 +1,18 @@
+- if @apartment
+  - provide :title, "#{@apartment.name} // "
 - provide :title, 'Enquiry'
 
 %h4 Name
 %p= @enquiry.name
 %h4 Email
 %p= @enquiry.email
+%h4 Phone
+%p= @enquiry.phone
+%h4 Date_to
+%p= @enquiry.date_to
+%h4 Date_from
+%p= @enquiry.date_from
 %h4 Body
 %p= simple_format @enquiry.body
+%h4 Apartment
+%p= @enquiry.apartment&.name
