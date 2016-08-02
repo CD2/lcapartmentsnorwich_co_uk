@@ -27,6 +27,9 @@ class Apartment < ApplicationRecord
     end
   end
 
+  delegate :title, to: :meta_data, allow_nil: true
+  delegate :description, to: :meta_data, allow_nil: true
+
   private
 
   def set_default_order_value

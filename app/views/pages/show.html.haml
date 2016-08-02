@@ -1,4 +1,7 @@
-= provide :edit, link_to('Edit', [:edit, :admin, @page])
+- provide :edit, link_to('Edit', [:edit, :admin, @page])
+- provide :title, @page.title
+- provide :meta_description, @page.description
+
 #banner{style: "background-image: url(#{@page.banner})"}
   - if @page.banner_images.count > 1
     #banner_images.unslide
@@ -12,10 +15,11 @@
       .main_column.body_text
         = raw @page.body
       .side_column.form
-        = form_for Enquiry.new do |f|
-          %h2 Get in touch
-          = hidden_field_tag :referer, url_for
-          = render 'enquiries/fields', f: f
+        - if @page.contact_form?
+          = form_for Enquiry.new do |f|
+            %h2 Get in touch
+            = hidden_field_tag :referer, url_for
+            = render 'enquiries/fields', f: f
 
 
 #apartment_previews

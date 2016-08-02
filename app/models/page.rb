@@ -15,9 +15,11 @@ class Page < ApplicationRecord
     end
   end
 
-
   def banner
     banner_images.first&.image
   end
+
+  delegate :title, to: :meta_data, allow_nil: true
+  delegate :description, to: :meta_data, allow_nil: true
 
 end
