@@ -34,7 +34,9 @@ $(window).on('load', function() {
   $('.unslide').unslider({
     autoplay: true,
     arrows: false,
-    speed: 1000
+    speed: 1500,
+    infinite: true,
+    easing: 'swing',
   })
 
     $('#menu_toggle').on('click', function () {
