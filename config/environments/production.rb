@@ -1,6 +1,7 @@
 Rails.application.configure do
   config.middleware.insert_before(Rack::Runtime, Rack::Rewrite) do
     r301 "https://luxurycityapartments.herokuapp.com/", "http://lcapartmentsnorwich.co.uk/"
+    r301 /.*/, Proc.new {|path, rack_env| "http://www.#{rack_env['SERVER_NAME']}#{path}" }, :if => Proc.new {|rack_env| rack_env['SERVER_NAME'] !~ /www\./i}
   end
   # Settings specified here will take precedence over those in config/application.rb.
 
