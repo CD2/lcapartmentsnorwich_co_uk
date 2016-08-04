@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get 'https://luxurycityapartments.herokuapp.com/', to: redirect('http://lcapartmentsnorwich.co.uk/', status: 301)
   get '/properties.php?search_accommodation=City_Apartment', to: redirect('/accommodation', status: 301)
   get '/property.php?property=3', to: redirect('/apartments/quayside-apartment', status: 301)
   get '/property.php?property=2', to: redirect('/apartments/samson-hercules-apartment', status: 301)
@@ -9,7 +10,6 @@ Rails.application.routes.draw do
   get '/why_norwich.php', to: redirect('/visit-norwich', status: 301)
   get '/contact.php', to: redirect('/contact-us', status: 301)
   get '/index.php', to: redirect('/', status: 301)
-
 
 
   mount Ckeditor::Engine => '/ckeditor'
