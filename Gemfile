@@ -20,6 +20,7 @@ gem 'devise'
 gem 'jquery-unslider-rails'
 gem 'font-awesome-rails'
 gem 'lightbox2-rails'
+gem 'rack-rewrite'
 group :production do
   gem 'rails_12factor'
   gem 'fog'
