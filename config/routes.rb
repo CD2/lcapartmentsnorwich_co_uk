@@ -1,5 +1,17 @@
 Rails.application.routes.draw do
 
+  get '/properties.php?search_accommodation=City_Apartment', to: redirect('/accommodation', status: 301)
+  get '/property.php?property=3', to: redirect('/apartments/quayside-apartment', status: 301)
+  get '/property.php?property=2', to: redirect('/apartments/samson-hercules-apartment', status: 301)
+  get '/property.php?property=5', to: redirect('/apartments/greyfriars-apartments', status: 301)
+  get '/where_we_are.php', to: redirect('/contact-us', status: 301)
+  get '/let_your_properties.php', to: redirect('/let-your-property', status: 301)
+  get '/why_norwich.php', to: redirect('/visit-norwich', status: 301)
+  get '/contact.php', to: redirect('/contact-us', status: 301)
+  get '/index.php', to: redirect('/', status: 301)
+
+
+
   mount Ckeditor::Engine => '/ckeditor'
   get 'apartments/show'
 
@@ -33,3 +45,6 @@ Rails.application.routes.draw do
   resources :pages, path: '', only: :show
 
 end
+
+
+
