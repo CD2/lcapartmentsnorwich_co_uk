@@ -1,4 +1,7 @@
 Rails.application.configure do
+  config.middleware.insert_before(Rack::Runtime, Rack::Rewrite) do
+    r301 "https://luxurycityapartments.herokuapp.com/", "http://lcapartmentsnorwich.co.uk/"
+  end
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.

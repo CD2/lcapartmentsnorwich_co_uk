@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'https://luxurycityapartments.herokuapp.com/', to: redirect('http://lcapartmentsnorwich.co.uk/', status: 301)
   get '/properties.php?search_accommodation=City_Apartment', to: redirect('/accommodation', status: 301)
   get '/property.php?property=3', to: redirect('/apartments/quayside-apartment', status: 301)
   get '/property.php?property=2', to: redirect('/apartments/samson-hercules-apartment', status: 301)
