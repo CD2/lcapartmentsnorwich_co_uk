@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  match '/sitemap', to: 'pages#sitemap', via: 'get'
+
   get '/properties.php?search_accommodation=City_Apartment', to: redirect('/accommodation', status: 301)
   get '/property.php?property=3', to: redirect('/apartments/quayside-apartment', status: 301)
   get '/property.php?property=2', to: redirect('/apartments/samson-hercules-apartment', status: 301)
@@ -44,6 +46,3 @@ Rails.application.routes.draw do
   resources :pages, path: '', only: :show
 
 end
-
-
-

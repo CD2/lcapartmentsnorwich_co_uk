@@ -8,4 +8,12 @@ class PagesController < ApplicationController
     @page = Page.get_from_url(params[:id])
   end
 
+  def sitemap
+  @pages = Page.all
+  @appartments = Apartment.all
+  respond_to do |format|
+    format.xml
+  end
+end
+
 end
