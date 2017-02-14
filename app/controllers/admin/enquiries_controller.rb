@@ -23,7 +23,7 @@ class Admin::EnquiriesController < AdminController
     end
 
     def set_apartment
-      @apartment = Apartment.get_from_url(params[:apartment_id])
+      @apartment = Apartment.get_from_url(params[:apartment_id]) rescue nil
     end
 
     def set_enquiry

@@ -24,6 +24,7 @@ Rails.application.routes.draw do
     resources :apartments, except: [:show] do
       resources :enquiries, only: [:index, :show, :destroy]
     end
+    resources :enquiries, only: [:index, :show, :destroy]
     resources :pages, except: [:show]
     resources :galleries, path: 'gallery', only: [:index, :create, :destroy]
     resources :blogs, except: [:show]
