@@ -1,0 +1,17 @@
+- provide :edit, link_to('Edit', [:edit, :admin, @blog])
+- provide :title, @blog.title
+- provide :meta_description, @blog.description
+
+#banner{style: "background-image: url(#{@blog.banner})"}
+  - if @blog.banner_images.count > 1
+    #banner_images.unslide
+      %ul
+        - @blog.banner_images.each do |image|
+          - unless image.image.blank?
+            %li.slide{style: "background-image: url(#{image.image})"}
+#content_wrapper
+  #content
+    .split_page
+      .main_column.body_text
+        %h1= @blog.name
+        = raw @blog.body
